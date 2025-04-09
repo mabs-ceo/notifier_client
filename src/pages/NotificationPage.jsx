@@ -47,7 +47,7 @@ export default function NotificationPage() {
     Those passed prayer time will not be displayed
   </p>
       
-      {notification.map((item, index) => (
+      {notification?.map((item, index) => (
         <Card
           key={index}
           name={item.name}
