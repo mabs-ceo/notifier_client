@@ -8,7 +8,7 @@ importScripts('https://www.gstatic.com/firebasejs/10.0.0/firebase-messaging-comp
 // Initialize the Firebase app in the service worker by passing in
 // your app's Firebase config object.
 // https://firebase.google.com/docs/web/setup#config-object
-const firebaseApp = initializeApp({
+firebase.initializeApp({
     apiKey: "AIzaSyCXZbpyQkgjAB6Xw6tjrEAk61g5XA3VSDM",
     authDomain: "notify-app-1-7ec8e.firebaseapp.com",
     projectId: "notify-app-1-7ec8e",
@@ -21,7 +21,7 @@ const firebaseApp = initializeApp({
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
 // const messaging = getMessaging(firebaseApp);
-const messaging = firebaseApp.messaging();
+const messaging = firebase.messaging();
 
 self.addEventListener('notificationclick', function (event) {
   console.log('Notification click received:', event);

@@ -6,15 +6,13 @@ export default function NavbarComponent() {
     <>
       <header className="flex items-center justify-between px-6 py-4 bg-green-600 text-white shadow-md">
         <Link to="/" className="text-xl font-bold tracking-wide">
-          Ummatti
+         URS
         </Link>
         <nav className="space-x-6 text-base font-medium">
           <Link to="/" className="hover:text-green-200 transition">
             Home
           </Link>
-          <Link to="/login" className="hover:text-green-200 transition">
-            Login
-          </Link>
+         
           <Link to="/notification" className="hover:text-green-200 transition">
             Notification
           </Link>

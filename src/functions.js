@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// const API_URL = 'http://localhost:3000/api/v1'; // Update with your API URL
-const API_URL = 'https://notifier-server-0rtz.onrender.com'; // Update with your API URL
+const API_URL = 'http://localhost:3000/api/v1'; // Update with your API URL
+// const API_URL = 'https://notifier-server-0rtz.onrender.com'; // Update with your API URL
 
 const API_TOKEN_URL = `${API_URL}/token/subscribe`;
 
@@ -9,9 +9,11 @@ const API_TOKEN_URL = `${API_URL}/token/subscribe`;
 export async function sendTokenToServer(token) {
     try {
         
+        console.log('Token sending to server:');
+     
         const response = await axios.post(API_TOKEN_URL, { token });
-
-        return response.status
+        console.log('Token sent to server:');
+        return response
         
     } catch (error) {
         console.error('Error sending token to server:', error);
