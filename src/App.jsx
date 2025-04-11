@@ -4,17 +4,19 @@ import LandingPage from './pages/LandingPage'
 
 import NotificationPage from './pages/NotificationPage'
 import './app.css'
-import NavbarComponent from './components/NavbarComponent'
+import Layout from './components/Layout'
+import PrivacyNotice from './pages/Privacy'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <Routes>
-<Route path="/" element={<NavbarComponent/>} >
+<Route path="/" element={<Layout/>} >
 <Route index element={<LandingPage/>} />
-<Route path="notification" element={<NotificationPage/>} />
+<Route path="notifications" element={<NotificationPage/>} />
+<Route path="privacy" element={<PrivacyNotice/>} />
 
 </Route>
     

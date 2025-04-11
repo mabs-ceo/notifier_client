@@ -1,25 +1,24 @@
 export function Card({ name, address, time, contact }) {
-    return (
-      <div className="bg-white shadow-sm hover:shadow-md transition-shadow duration-300 w-full max-w-2xl mx-auto px-4 py-3 text-sm text-gray-800 my-1 rounded-md border border-gray-200">
-        <div className="space-y-2 divide-y divide-gray-200">
-          <div className="flex justify-between items-start py-1">
-            <span className="text-gray-500">Name</span>
-            <span className="text-gray-900 font-medium text-right">{name}</span>
-          </div>
-          <div className="flex justify-between items-start py-1">
-            <span className="text-gray-500">Contact</span>
-            <span className="text-gray-900 font-medium text-right">{contact}</span>
-          </div>
-          <div className="flex justify-between items-start py-1">
-            <span className="text-gray-500">Address</span>
-            <span className="text-gray-900 font-medium text-right">{address}</span>
-          </div>
-          <div className="flex justify-between items-start py-1">
-            <span className="text-gray-500">Prayer-Time</span>
-            <span className="text-gray-900 font-medium text-right  ">{time}</span>
-          </div>
+  return (
+    <div className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-2xl mx-auto px-6 py-4 text-sm text-green-900 my-3 rounded-xl border border-green-500">
+      <div className="space-y-3 divide-y divide-green-200">
+        <div className="flex justify-between items-start py-1">
+          <span className="text-green-700 font-medium">Name</span>
+          <span className="text-right font-semibold">{name}</span>
+        </div>
+        <div className="flex justify-between items-start py-1 pt-2">
+          <span className="text-green-700 font-medium">Contact</span>
+          <span className="text-right font-semibold">{contact}</span>
+        </div>
+        <div className="flex justify-between items-start py-1 pt-2">
+          <span className="text-green-700 font-medium">Address</span>
+          <span className="text-right font-semibold">{address}</span>
+        </div>
+        <div className="flex justify-between items-start py-1 pt-2">
+          <span className="text-green-700 font-medium">Prayer Time</span>
+          <span className="text-right font-semibold">{time}</span>
         </div>
       </div>
-    );
-  }
-  
+    </div>
+  );
+}
