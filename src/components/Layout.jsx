@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router';
-
+import { Menu, X } from "lucide-react";
 export default function Layout() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="flex  flex-col min-h-screen bg-green-50 justify-between">
     {/* Navbar */}
-    <nav className="bg-green-500 p-4 shadow-md  ">
-      <div className=" mx-auto flex justify-between items-center md:flex-row  flex-col max-w-7xl ">
+    <nav className="bg-green-500 p-4 shadow-md">
+      <div className="mx-auto max-w-7xl flex justify-between items-center">
         {/* Logo */}
         <div className="text-white font-bold text-2xl">
           <Link to="/" className="flex items-center space-x-2">
@@ -15,19 +17,53 @@ export default function Layout() {
           </Link>
         </div>
 
-        {/* Navigation Links */}
-        <div className="space-x-6 flex  justify-center items-center mt-4 md:mt-0 font-bold text-xl">
+        {/* Hamburger for mobile */}
+        <div className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Links - Desktop */}
+        <div className="hidden md:flex space-x-6 font-bold text-xl">
           <Link to="/" className="text-white hover:text-green-200 transition duration-300">
             Home
           </Link>
           <Link to="/privacy" className="text-white hover:text-green-200 transition duration-300">
-          Privacy
+            Privacy
           </Link>
           <Link to="/notifications" className="text-white hover:text-green-200 transition duration-300">
             Notifications
           </Link>
         </div>
       </div>
+
+      {/* Links - Mobile */}
+      {isOpen && (
+        <div className="md:hidden mt-4 flex flex-col space-y-4 text-center font-bold text-xl">
+          <Link
+            to="/"
+            className="text-white hover:text-green-200 transition duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </Link>
+          <Link
+            to="/privacy"
+            className="text-white hover:text-green-200 transition duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Privacy
+          </Link>
+          <Link
+            to="/notifications"
+            className="text-white hover:text-green-200 transition duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Notifications
+          </Link>
+        </div>
+      )}
     </nav>
 
     {/* Main Content */}
