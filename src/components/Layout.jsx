@@ -3,10 +3,10 @@ import { Link, Outlet } from 'react-router';
 
 export default function Layout() {
   return (
-    <div className="flex flex-col min-h-screen bg-green-50 justify-between">
+    <div className="flex  flex-col min-h-screen bg-green-50 justify-between">
     {/* Navbar */}
-    <nav className="bg-green-500 p-4 shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <nav className="bg-green-500 p-4 shadow-md  ">
+      <div className=" mx-auto flex justify-between items-center md:flex-row  flex-col max-w-7xl ">
         {/* Logo */}
         <div className="text-white font-bold text-2xl">
           <Link to="/" className="flex items-center space-x-2">
@@ -16,7 +16,7 @@ export default function Layout() {
         </div>
 
         {/* Navigation Links */}
-        <div className="space-x-6">
+        <div className="space-x-6 flex  justify-center items-center mt-4 md:mt-0 font-bold text-xl">
           <Link to="/" className="text-white hover:text-green-200 transition duration-300">
             Home
           </Link>

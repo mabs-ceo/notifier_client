@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function ComingSoon() {
   return (
-    <div className="flex items-center justify-center h-screen bg-green-100">
+    <div className="flex items-center justify-center bg-transparent">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

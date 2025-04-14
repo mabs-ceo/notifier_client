@@ -27,7 +27,7 @@ export default function HomePage() {
     id="services"
     className=" flex flex-col items-center  px-4 text-center"
   >
-    <h1 className="text-3xl md:text-4xl font-bold mb-4 text-slate-700">
+    <h1 className="text-3xl mt-20 md:mt-2 transition-all ease-in-out md:text-4xl font-bold mb-4 text-slate-700">
       Welcome to ummah notify
     </h1>
     <blockquote  className="text-xl italic font-semibold text-slate-900 dark:text-white">
