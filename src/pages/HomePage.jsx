@@ -1,5 +1,6 @@
 import React from 'react'
 import { requestPermission } from '../../firebase';
+import GetNotifiedInfoPage from '../components/getNotifiedPage';
 
 
 
@@ -37,26 +38,8 @@ export default function HomePage() {
       By subscribing, you’ll receive timely notifications about upcoming Janazah (funeral) prayers 
       so you can fulfill the communal obligation and support fellow Muslims during times of loss.
     </p>
-
-    <h2 className="text-xl md:text-2xl font-semibold text-slate-700 mb-4">
-      Subscribe to our Janazah Notification Service
-    </h2>
-    <p className="text-slate-700 mb-6">
-      Get notified when there is a Janazah prayer .
-    </p>
-
-    <button
-      onClick={handleSubscribe}
-      className="px-6 py-3 text-xl md:text-2xl tracking-wide uppercase bg-green-500 text-slate-700 cursor-pointer rounded-full hover:bg-green-600 transition"
-    >
-      Subscribe
-    </button>
-    <button
-      onClick={handleUnsubscribe}
-      className="mt-4 px-6 py-3 text-md  tracking-wide uppercase bg-transparent   text-slate-600 border cursor-pointer  border-slate-700 hover:text-slate-50 rounded-full hover:bg-slate-600 transition"
-    >
-      Unsubscribe
-    </button>
+<GetNotifiedInfoPage handleSubscribe={handleSubscribe} handleUnsubscribe={handleUnsubscribe}/>
+ 
   </section>
         </main>
       );
