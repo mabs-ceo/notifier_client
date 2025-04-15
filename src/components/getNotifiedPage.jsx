@@ -1,5 +1,6 @@
 import React from 'react';
 import { BellRing } from 'lucide-react';
+import ComingSoon from '../pages/CommingSoon';
 
 export default function GetNotifiedInfoPage({handleSubscribe ,handleUnsubscribe}) {
   return (
@@ -21,7 +22,8 @@ export default function GetNotifiedInfoPage({handleSubscribe ,handleUnsubscribe}
             <li>That’s it! You’ll be notified when Janazah prayers are announced.</li>
           </ul>
         </div>
-        <button
+       
+        {/* <button
           className="bg-green-600 text-white font-medium py-2 px-6 rounded-lg shadow hover:bg-blue-700 transition"
           onClick={handleSubscribe}
         >
@@ -29,7 +31,8 @@ export default function GetNotifiedInfoPage({handleSubscribe ,handleUnsubscribe}
         </button>
         <p className="text-xs text-gray-400 mt-4" >
           You can unsubscribe at any time from your browser settings or by clicking the <span className=' cursor-pointer text-red-500 font-bold' onClick={handleUnsubscribe}>unsubscribe </span>.
-        </p>
+        </p> */}
+       
       </div>
     
   );

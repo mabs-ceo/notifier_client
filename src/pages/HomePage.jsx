@@ -38,7 +38,9 @@ export default function HomePage() {
       By subscribing, you’ll receive timely notifications about upcoming Janazah (funeral) prayers 
       so you can fulfill the communal obligation and support fellow Muslims during times of loss.
     </p>
-<GetNotifiedInfoPage handleSubscribe={handleSubscribe} handleUnsubscribe={handleUnsubscribe}/>
+ 
+{/* <GetNotifiedInfoPage handleSubscribe={handleSubscribe} handleUnsubscribe={handleUnsubscribe}/> */}
+   
  
   </section>
         </main>
