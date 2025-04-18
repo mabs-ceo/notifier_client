@@ -22,29 +22,6 @@ firebase.initializeApp({
 // messages.
 // const messaging = getMessaging(firebaseApp);
 const messaging = firebase.messaging();
-
-self.addEventListener('notificationclick', function (event) {
-  console.log('Notification click received:', event);
-  
-  event.notification.close();
-  const clickAction = 'https://youtube.com'
-
-
-  event.waitUntil(
-    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (clientList) {
-      for (const client of clientList) {
-        if (client.url === clickAction && 'focus' in client) {
-          return client.focus();
-        }
-      }
-      if (clients.openWindow) {
-        return clients.openWindow(clickAction);
-      }
-    })
-  );
-});
-
-
 messaging.onBackgroundMessage(messaging, (payload) => {
   console.log('[firebase-messaging-sw.js] Received background message ', payload);
   // Customize notification here
@@ -53,7 +30,7 @@ messaging.onBackgroundMessage(messaging, (payload) => {
     body: 'There is a new notification',
     icon: '/firebase-logo.png',
     data: {
-      click_action: 'https://youtube.com', // URL to open when the notification is clicked
+      click_action: 'https://www.ummahnotify.com/notifications', // URL to open when the notification is clicked
     },     
    
   };
@@ -61,3 +38,27 @@ messaging.onBackgroundMessage(messaging, (payload) => {
   self.registration.showNotification(notificationTitle,
     notificationOptions);
 });
+
+self.addEventListener('notificationclick', function(event) {
+  event.notification.close();
+
+  const url = event.notification.data?.click_action || "https://janazah.sg";
+
+  event.waitUntil(
+    clients.matchAll({ type: 'window' }).then((clientList) => {
+      // If an open window already exists, focus it
+      for (const client of clientList) {
+        if (client.url === url && 'focus' in client) {
+          return client.focus();
+        }
+      }
+      // Otherwise, open a new tab
+      if (clients.openWindow) {
+        return clients.openWindow(url);
+      }
+    })
+  );
+});
+
+
+

@@ -7,7 +7,7 @@ import './app.css'
 import Layout from './components/Layout'
 import PrivacyNotice from './pages/Privacy'
 import ComingSoon from './pages/CommingSoon'
-import GetNotifiedInfoPage from './components/getNotifiedPage'
+
 
 
 function App() {
@@ -16,9 +16,9 @@ function App() {
   return (
     <Routes>
 <Route path="/" element={<Layout/>} >
-{/* <Route index element={<GetNotifiedInfoPage/>} /> */}
+<Route path="notifications" element={<NotificationPage/>} />
 <Route index element={<LandingPage/>} />
-<Route path="notifications" element={<ComingSoon/>} />
+{/* <Route path="notifications" element={<ComingSoon/>} /> */}
 <Route path="privacy" element={<PrivacyNotice/>} />
 
 </Route>

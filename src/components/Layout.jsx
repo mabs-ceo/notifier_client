@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router';
 import { Menu, X } from "lucide-react";
+import logo from "../assets/logo.png"
+
 export default function Layout() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -10,12 +12,14 @@ export default function Layout() {
     <nav className="bg-green-500 p-4 shadow-md">
       <div className="mx-auto max-w-7xl flex justify-between items-center">
         {/* Logo */}
-        <div className="text-white font-bold text-2xl">
-          <Link to="/" className="flex items-center space-x-2">
-            <span>Ummah</span>
-            <span className="text-green-200">Notify</span>
-          </Link>
-        </div>
+        <div className="text-white font-bold text-2xl h-20">
+  <Link to="/" className="flex items-center space-x-2 h-full">
+   
+    <span>Ummah</span>
+    <span className="text-green-200">Notify</span>
+  </Link>
+</div>
+
 
         {/* Hamburger for mobile */}
         <div className="md:hidden">
@@ -65,13 +69,15 @@ export default function Layout() {
         </div>
       )}
     </nav>
+   
 
     {/* Main Content */}
     <Outlet />
 
     {/* Footer */}
     <footer id="footer" className="bg-green-500 h-[60px] flex items-center justify-center text-white text-sm">
-      © 2025 — Created by MABS
+      © 2025 — Created by MABS  <img src={logo} className="h-50 max-w-[150px] object-contain " alt="Logo" />
+
     </footer>
   </div>
     // <>

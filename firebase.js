@@ -23,7 +23,6 @@ const app = initializeApp(firebaseConfig);
 const messaging = getMessaging(app);
 
 
-
 export async function requestPermission({unsubscribe}) {
     console.log('Requesting permission...');
 

@@ -1,6 +1,6 @@
 export function Card({ name, address, time, contact }) {
   return (
-    <div className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-2xl mx-auto px-6 py-4 text-sm text-green-900 my-3 rounded-xl border border-green-500">
+    <div className=" md:text-base lg:text-xl xl:text-2xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-2xl mx-auto px-6 py-4 text-sm text-green-900 my-3 rounded-xl border border-green-500">
       <div className="space-y-3 divide-y divide-green-200">
         <div className="flex justify-between items-start py-1">
           <span className="text-green-700 font-medium">Name</span>
