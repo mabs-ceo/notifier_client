@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/v1'; // Update with your API URL
-// const API_URL = 'https://notifier-server-0rtz.onrender.com/api/v1'; // Update with your API URL
+// const API_URL = 'http://localhost:5000/api/v1'; // Update with your API URL
+const API_URL = 'https://notifier-server-0rtz.onrender.com/api/v1'; // Update with your API URL
 
 const API_TOKEN_URL = `${API_URL}/token/subscribe`;
 
@@ -32,7 +32,10 @@ export async function sendTokenToServer(token,timeSpend,honeypotValue) {
 
 export async function getNotification(){
     try {
-        const {data} = await axios.get(`${API_URL}/notifications/janaza`);
+        const {data} = await axios.get(`${API_URL}/notifications/janaza`, {
+            withCredentials: true
+            
+          });
 
         return data
     } catch (error) {

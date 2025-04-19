@@ -24,7 +24,7 @@ const messaging = getMessaging(app);
 
 
 export async function requestPermission({unsubscribe,timeSpend,honeypotValue}) {
-    console.log('Requesting permission...');
+  
 
     if(unsubscribe) {      
         console.log('Unsubscribing...');
@@ -32,12 +32,12 @@ export async function requestPermission({unsubscribe,timeSpend,honeypotValue}) {
             vapidKey: "BGHj7-7Ql4iESinjLQePZisFFyyJ5Rq2RnS-xiRwD9z0x0rBQZmnE9GnOu3VGuvzf2dphIs1sBWPZdz7ehSaMfE"
           });
         const response = await Unsubscribe(token); // Unsubscribe the token from your server
-        console.log('Token unsubscribed:', response.data);
+      
         return response
      }
     
     const permission = await Notification.requestPermission();
-    console.log('request permission')
+ 
     if (permission === 'granted') {
       try {
         const tokenFCM = await getToken(messaging, {
@@ -51,13 +51,9 @@ export async function requestPermission({unsubscribe,timeSpend,honeypotValue}) {
          return response
          
           // you can now send this token to your backend or store it as needed
-        } else {
-          console.log('No registration token available. Request permission to generate one.');
-        }
+        } 
       } catch (err) {
-        console.error('An error occurred while retrieving token.', err);
+       
       }
-    } else {
-      console.log('Notification permission not granted.');
     }
   }

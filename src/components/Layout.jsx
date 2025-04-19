@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, Outlet } from 'react-router';
-import { Menu, X } from "lucide-react";
+
 
 import Header from '../widgets/Header';
 import Footer from '../widgets/Footer';
 
 export default function Layout() {
-  const [isOpen, setIsOpen] = useState(false);
+ 
 
   return (
     <div className="flex  flex-col  bg-green-50 ">
