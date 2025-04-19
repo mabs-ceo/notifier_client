@@ -6,7 +6,7 @@ import NotificationPage from './pages/NotificationPage'
 import './app.css'
 import Layout from './components/Layout'
 import PrivacyNotice from './pages/Privacy'
-import ComingSoon from './pages/CommingSoon'
+
 
 
 

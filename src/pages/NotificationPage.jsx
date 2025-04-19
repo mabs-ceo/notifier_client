@@ -20,6 +20,7 @@ export default function NotificationPage() {
       try {
         const response = await getNotification();
         setNotification(response.data);
+        
        
         setLoading(false);
       } catch (error) {
@@ -65,7 +66,7 @@ export default function NotificationPage() {
       name={item.name}
       address={item.postal}
       contact={item.contact}
-      time={new Date(item.dueDate).toLocaleTimeString([], {
+      time={new Date(item.dueDate).toLocaleDateString([], {
         hour: '2-digit',
         minute: '2-digit',
       })}

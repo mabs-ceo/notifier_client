@@ -5,6 +5,7 @@ import Header from '../widgets/Header';
 import Hero from '../widgets/Hero';
 import PrayerTime from '../widgets/PrayerTime';
 import AboutUs from '../widgets/AboutUs';
+import QandS from '../widgets/QandS';
 
 
 
@@ -50,9 +51,10 @@ setMsg('')
      
     }
     return (
-        <main>
+        <main >
           <Hero msg={msg} handleSubscribe={handleSubscribe} handleUnsubscribe={handleUnsubscribe}/>
         <AboutUs/>
+        <QandS/>
     
 
 

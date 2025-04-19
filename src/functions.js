@@ -43,6 +43,14 @@ export async function getNotification(){
         return 
     }       
 }
+export async function checkLocation(){
+    try {
+        const {data} = await axios.get(`${API_URL}/check-location`)
+        return data
+    } catch (error) {
+        
+    }
+}
 
 export async function getPrayerTime(){
     const datasetId = "d_e81ea2337599b674c4f645c1af93e0dc";
@@ -54,9 +62,11 @@ const url = "https://data.gov.sg/api/action/datastore_search?resource_id=" + dat
       throw new Error('Failed to fetch data');
     }
     const data = await response.json();
-    console.log(response);
+    // console.log(response);
+    return null
   } catch (error) {
-    console.error('Error fetching data:', error);
+    return null
+    // console.error('Error fetching data:', error);
   }
 
 }

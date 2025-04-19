@@ -27,7 +27,7 @@ export async function requestPermission({unsubscribe,timeSpend,honeypotValue}) {
   
 
     if(unsubscribe) {      
-        console.log('Unsubscribing...');
+        // console.log('Unsubscribing...');
         const token = await getToken(messaging, {
             vapidKey: "BGHj7-7Ql4iESinjLQePZisFFyyJ5Rq2RnS-xiRwD9z0x0rBQZmnE9GnOu3VGuvzf2dphIs1sBWPZdz7ehSaMfE"
           });
