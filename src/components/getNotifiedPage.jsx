@@ -1,7 +1,14 @@
 import React from 'react';
 import { BellRing } from 'lucide-react';
 
-export default function GetNotifiedInfoPage({ handleSubscribe, handleUnsubscribe }) {
+
+
+export default function GetNotifiedInfoPage({ msg,handleSubscribe, handleUnsubscribe }) {
+ 
+ 
+
+
+ 
   return (
     <div className="max-w-xl mx-auto bg-green-100 shadow-xl rounded-3xl p-8 text-center space-y-6">
       
@@ -33,11 +40,12 @@ export default function GetNotifiedInfoPage({ handleSubscribe, handleUnsubscribe
 
       {/* Subscribe Form */}
       <div className="flex flex-col gap-4">
+    
         <button
           className="bg-green-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-md hover:bg-green-700 transition duration-300"
           onClick={handleSubscribe}
         >
-          Get Notified
+          {msg ? msg: "Get Notified"}
         </button>
 
         {/* <div className="flex flex-col sm:flex-row gap-3">
@@ -65,6 +73,7 @@ export default function GetNotifiedInfoPage({ handleSubscribe, handleUnsubscribe
           unsubscribe
         </span>.
       </p>
+      
     </div>
   );
 }

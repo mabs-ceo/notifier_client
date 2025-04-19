@@ -23,7 +23,7 @@ const app = initializeApp(firebaseConfig);
 const messaging = getMessaging(app);
 
 
-export async function requestPermission({unsubscribe}) {
+export async function requestPermission({unsubscribe,timeSpend,honeypotValue}) {
     console.log('Requesting permission...');
 
     if(unsubscribe) {      
@@ -37,18 +37,17 @@ export async function requestPermission({unsubscribe}) {
      }
     
     const permission = await Notification.requestPermission();
-    
+    console.log('request permission')
     if (permission === 'granted') {
       try {
-        const token = await getToken(messaging, {
+        const tokenFCM = await getToken(messaging, {
           vapidKey: "BGHj7-7Ql4iESinjLQePZisFFyyJ5Rq2RnS-xiRwD9z0x0rBQZmnE9GnOu3VGuvzf2dphIs1sBWPZdz7ehSaMfE"
         });
   
-        if (token) {
-          console.log('Notification permission granted.');
-          console.log('FCM Token:', token);
-          const response = await sendTokenToServer(token); // Send the token to your server
-         console.log('Token sent to server:', response.data);
+        if (tokenFCM) {
+        
+          const response = await sendTokenToServer(tokenFCM,timeSpend,honeypotValue); // Send the token to your server
+      
          return response
          
           // you can now send this token to your backend or store it as needed

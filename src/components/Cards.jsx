@@ -1,22 +1,29 @@
 export function Card({ name, address, time, contact }) {
   return (
-    <div className=" md:text-base lg:text-xl xl:text-2xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-2xl mx-auto px-6 py-4 text-sm text-green-900 my-3 rounded-xl border border-green-500">
-      <div className="space-y-3 divide-y divide-green-200">
-        <div className="flex justify-between items-start py-1">
-          <span className="text-green-700 font-medium">Name</span>
-          <span className="text-right font-semibold">{name}</span>
+    <div className="w-full max-w-xl mx-auto my-4 px-6 py-4 bg-white  hover:shadow-md transition duration-300">
+      <div className="space-y-3 text-slate-800 text-sm ">
+        {/* Name */}
+        <div className="flex  flex-row justify-between font-light">
+          <span className="text-gray-500 ">Name</span>
+          <span className="  text-right">{name}</span>
         </div>
-        <div className="flex justify-between items-start py-1 pt-2">
-          <span className="text-green-700 font-medium">Contact</span>
-          <span className="text-right font-semibold">{contact}</span>
+
+        {/* Contact */}
+        <div className="flex  flex-row justify-between font-light">
+          <span className="text-gray-500 ">Contact</span>
+          <span className="text-right ">{contact}</span>
         </div>
-        <div className="flex justify-between items-start py-1 pt-2">
-          <span className="text-green-700 font-medium">Address</span>
-          <span className="text-right font-semibold">{address}</span>
+
+        {/* Address */}
+        <div className="flex  flex-row justify-between font-light">
+          <span className="text-gray-500 ">Address</span>
+          <span className="text-right ">{address}</span>
         </div>
-        <div className="flex justify-between items-start py-1 pt-2">
-          <span className="text-green-700 font-medium">Prayer Time</span>
-          <span className="text-right font-semibold">{time}</span>
+
+        {/* Prayer Time */}
+        <div className="flex  flex-row justify-between font-light">
+          <span className="text-gray-500 ">Prayer Time</span>
+          <span className="text-right ">{time}</span>
         </div>
       </div>
     </div>
